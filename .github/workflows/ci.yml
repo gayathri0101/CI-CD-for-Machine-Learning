@@ -16,7 +16,7 @@ jobs:
       - name: Install Packages
         run: make install
       - name: Format
-        run: make format
+        run: python -m black *.py
       - name: Train
         run: make train
       - name: Evaluation
