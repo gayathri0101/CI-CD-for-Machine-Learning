@@ -1,2 +1,6 @@
 scikit-learn
 skops
+cml
+numpy
+pandas
+matplotlib
