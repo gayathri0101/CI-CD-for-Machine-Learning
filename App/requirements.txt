@@ -3,3 +3,4 @@ skops
 numpy
 pandas
 matplotlib
+black
