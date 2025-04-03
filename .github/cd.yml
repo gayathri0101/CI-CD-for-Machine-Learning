@@ -11,19 +11,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0  # Ensures full history to prevent divergence issues
-
-      - name: Set Git Pull Strategy
-        run: git config --global pull.rebase false  # Enables merging
-
-      - name: Pull Latest Changes
-        run: |
-          git pull origin $(git rev-parse --abbrev-ref HEAD) || echo "Skipping pull due to no changes"
+      - uses: actions/checkout@v3
 
       - name: Deployment To Hugging Face
         env:
           HF: ${{ secrets.HF }}
         run: make deploy HF=$HF
+
+          
